@@ -19,3 +19,9 @@ JUnit 5 - Testing Framework
 
                                 JUnit Platform (Test Engine) 
 ```
+
+### JUnit-5 Maven dependencies
+```
+    junit-jupiter-api : API to write JUnit 5 tests
+    junit-jupiter-engine : Engine to run JUnit 5 tests
+```
