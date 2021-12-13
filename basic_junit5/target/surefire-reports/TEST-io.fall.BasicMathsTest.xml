@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="io.fall.BasicMathsTest" time="0.001" errors="0" skipped="0">
+<testsuite tests="5" failures="0" name="io.fall.BasicMathsTest" time="0.004" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="14.0.1+7"/>
@@ -12,8 +12,9 @@
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
     <property name="user.country" value="GB"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="test" value="io.fall.BasicMathsTest#test"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/home/shiru/0/Java/Java Frameworks/JUnit-5"/>
+    <property name="user.dir" value="/home/shiru/0/Java/Java Frameworks/JUnit-5/basic_junit5"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="java.runtime.version" value="14.0.1+7"/>
     <property name="os.arch" value="amd64"/>
@@ -30,7 +31,7 @@
     <property name="java.class.version" value="58.0"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="os.version" value="5.11.0-38-generic"/>
+    <property name="os.version" value="5.11.0-41-generic"/>
     <property name="library.jansi.path" value="/usr/share/maven/lib/jansi-native"/>
     <property name="user.home" value="/home/shiru"/>
     <property name="user.timezone" value="Asia/Kolkata"/>
@@ -40,7 +41,7 @@
     <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.x.jar"/>
     <property name="java.vm.specification.version" value="14"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test -f /home/shiru/0/Java/Java Frameworks/JUnit-5/basic_junit5/pom.xml"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean test -Dtest=io.fall.BasicMathsTest#test"/>
     <property name="java.home" value="/usr/lib/jvm/jdk-14.0.1"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -55,5 +56,9 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.endian" value="little"/>
   </properties>
-  <testcase classname="io.fall.BasicMathsTest" name="io.fall.BasicMathsTest.testAdd" time="0.001"/>
+  <testcase classname="io.fall.BasicMathsTest" name="io.fall.BasicMathsTest.testAdd" time="0.003"/>
+  <testcase classname="io.fall.BasicMathsTest" name="io.fall.BasicMathsTest.testSubtract" time="0"/>
+  <testcase classname="io.fall.BasicMathsTest" name="io.fall.BasicMathsTest.testMultiply" time="0"/>
+  <testcase classname="io.fall.BasicMathsTest" name="io.fall.BasicMathsTest.testDivide" time="0"/>
+  <testcase classname="io.fall.BasicMathsTest" name="io.fall.BasicMathsTest.testAssertMethods" time="0.001"/>
 </testsuite>

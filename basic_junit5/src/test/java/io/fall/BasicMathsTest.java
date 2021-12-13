@@ -12,14 +12,50 @@ public class BasicMathsTest {
 
     @Test
     public void testAdd() {
-        System.out.println("testing Add function...");
+        System.out.println("testing Addition function...");
         BasicMaths maths = new BasicMaths();
 
         int actual = maths.addition(Num1, Num2);
         int expected = Num1+Num2;
         
         assertEquals(expected, actual);
-        System.out.println("testing Add function completed\n");
+        System.out.println("testing Addition function completed\n");
+    }
+
+    @Test
+    public void testSubtract() {
+        System.out.println("testing Subtraction function...");
+        BasicMaths maths = new BasicMaths();
+
+        int actual = maths.subtraction(Num1, Num2);
+        int expected = Num1-Num2;
+        
+        assertEquals(expected, actual);
+        System.out.println("testing Subtraction function completed\n");
+    }
+
+    @Test
+    public void testMultiply() {
+        System.out.println("testing Multiplication function...");
+        BasicMaths maths = new BasicMaths();
+
+        int actual = maths.multiplication(Num1, Num2);
+        int expected = Num1*Num2;
+        
+        assertEquals(expected, actual);
+        System.out.println("testing Multiplication function completed\n");
+    }
+
+    @Test
+    public void testDivide() {
+        System.out.println("testing Division function...");
+        BasicMaths maths = new BasicMaths();
+
+        int actual = maths.division(Num1, Num2);
+        int expected = Num1/Num2;
+        
+        assertEquals(expected, actual);
+        System.out.println("testing Division function completed\n");
     }
 
     @Test
@@ -30,6 +66,10 @@ public class BasicMathsTest {
         assertEquals(true, true, "Message - In case of test failure");
         assertEquals(true, 1+2==3);
         // assertEquals(true, "true");      // error
+
+        assertTrue(true);
+        assertFalse(false);
+        assertNull(null);
 
         // assertArrayEquals
         int[] expected = {1,2,3};

@@ -25,3 +25,9 @@ JUnit 5 - Testing Framework
     junit-jupiter-api : API to write JUnit 5 tests
     junit-jupiter-engine : Engine to run JUnit 5 tests
 ```
+
+### To Run Junit-5 test cases
+
+    $ mvn clean test
+    $ mvn clean test -Dtest=io.fall.BasicMathsTest
+    $ mvn clean test -Dtest=io.fall.BasicMathsTest#testAssertMethods
