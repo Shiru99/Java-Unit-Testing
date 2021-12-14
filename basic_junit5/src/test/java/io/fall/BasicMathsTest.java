@@ -59,6 +59,16 @@ public class BasicMathsTest {
     }
 
     @Test
+    public void testDividebyZero() {
+        System.out.println("testing Division function...");
+        
+        BasicMaths maths = new BasicMaths();
+        assertThrows(ArithmeticException.class, ()->maths.division(Num1, 0) , "Divide By Zer0");
+
+        System.out.println("testing Division function completed\n");
+    }
+
+    @Test
     public void testAssertMethods() {
         System.out.println("Exploring different Assert methods");
 
