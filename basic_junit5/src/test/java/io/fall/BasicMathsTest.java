@@ -1,6 +1,7 @@
 package io.fall;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 import java.util.List;
 
@@ -9,9 +10,48 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.DisabledOnOs;
+import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
+import org.junit.jupiter.api.condition.EnabledIfSystemProperty;
+import org.junit.jupiter.api.condition.EnabledOnJre;
+import org.junit.jupiter.api.condition.EnabledOnOs;
+import org.junit.jupiter.api.condition.JRE;
+import org.junit.jupiter.api.condition.OS;
 
+@EnabledOnOs({OS.LINUX, OS.MAC})
+@DisabledOnOs(OS.WINDOWS)
 public class BasicMathsTest {
+
+    @RepeatedTest(value = 3, name = "{displayName} - {currentRepetition}/{totalRepetitions}")
+    @DisplayName("Generate random number")
+    @EnabledOnJre({JRE.JAVA_14, JRE.JAVA_11})
+    // @DisabledForJreRange(max = JRE.JAVA_11)
+    @EnabledIfEnvironmentVariable(named = "GDMSESSION", matches = "ubuntu")
+    @EnabledIfSystemProperty(named = "java.vm.vendor", matches = "Oracle.*")
+    public void gamble() {
+        double rand = Math.random();
+        assertTrue(rand>0);
+    }
+
+    // JUnit Assumptions helps us in skipping a test for some specific scenarios
+    @RepeatedTest(value = 5, name = "{displayName} - {currentRepetition}/{totalRepetitions}")
+    @DisplayName("assumption test")
+    public void serverConnectionTest(){
+        boolean isServerUp=false;
+
+        double rand = Math.random();
+        if(rand<0.2){
+            isServerUp = true;
+        }
+        
+        assumeTrue(isServerUp);
+
+        System.out.println("Server is up, continue server side testing");
+    }
+
 
     @BeforeAll
 	static void setup(){
