@@ -1,17 +1,13 @@
 package io.fall;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertIterableEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.List;
 
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -22,6 +18,11 @@ public class BasicMathsTest {
 		System.out.println("@BeforeAll executed");
 	}
     
+    @BeforeEach
+	void setupThis(){
+		System.out.println("@BeforeEach executed");
+	}
+
     private static final int Num1 = 1;
     private static final int Num2 = 2;
 
@@ -97,6 +98,11 @@ public class BasicMathsTest {
 
         System.out.println("done\n");
     }
+
+    @AfterEach
+	void tearThis(){
+		System.out.println("@AfterEach executed");
+	}
 
     @AfterAll
 	static void tear(){
