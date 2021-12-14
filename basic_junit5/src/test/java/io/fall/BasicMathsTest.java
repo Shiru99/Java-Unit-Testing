@@ -12,60 +12,48 @@ public class BasicMathsTest {
 
     @Test
     public void testAdd() {
-        System.out.println("testing Addition function...");
         BasicMaths maths = new BasicMaths();
 
         int actual = maths.addition(Num1, Num2);
         int expected = Num1+Num2;
         
         assertEquals(expected, actual);
-        System.out.println("testing Addition function completed\n");
     }
 
     @Test
     public void testSubtract() {
-        System.out.println("testing Subtraction function...");
         BasicMaths maths = new BasicMaths();
 
         int actual = maths.subtraction(Num1, Num2);
         int expected = Num1-Num2;
         
         assertEquals(expected, actual);
-        System.out.println("testing Subtraction function completed\n");
     }
 
     @Test
     public void testMultiply() {
-        System.out.println("testing Multiplication function...");
         BasicMaths maths = new BasicMaths();
 
         int actual = maths.multiplication(Num1, Num2);
         int expected = Num1*Num2;
         
         assertEquals(expected, actual);
-        System.out.println("testing Multiplication function completed\n");
     }
 
     @Test
     public void testDivide() {
-        System.out.println("testing Division function...");
         BasicMaths maths = new BasicMaths();
 
         int actual = maths.division(Num1, Num2);
         int expected = Num1/Num2;
         
         assertEquals(expected, actual);
-        System.out.println("testing Division function completed\n");
     }
 
     @Test
-    public void testDividebyZero() {
-        System.out.println("testing Division function...");
-        
+    public void testDivideByZero() {
         BasicMaths maths = new BasicMaths();
         assertThrows(ArithmeticException.class, ()->maths.division(Num1, 0) , "Divide By Zer0");
-
-        System.out.println("testing Division function completed\n");
     }
 
     @Test
