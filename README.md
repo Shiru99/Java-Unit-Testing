@@ -37,3 +37,4 @@ JUnit 5 - Testing Framework
 ## Junit test lifecycle & hooks
 
 ![Template 1](pics/JUnit-Test-Life-Cycle.jpg)
+* JUnit creates a new instance of the test class before invoking each @Test method. This helps provide independence between test methods and avoids unintentional side effects in the test code. Because each test method runs on a new test class instance, we can’t reuse instance variable values across test methods.

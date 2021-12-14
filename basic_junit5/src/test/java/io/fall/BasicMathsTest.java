@@ -15,12 +15,15 @@ public class BasicMathsTest {
 
     @BeforeAll
 	static void setup(){
-		System.out.println("@BeforeAll executed");
+		System.out.println("static @BeforeAll executed");
 	}
     
+    BasicMaths maths; 
+
     @BeforeEach
 	void setupThis(){
 		System.out.println("@BeforeEach executed");
+        maths = new BasicMaths();
 	}
 
     private static final int Num1 = 1;
@@ -28,8 +31,6 @@ public class BasicMathsTest {
 
     @Test
     public void testAdd() {
-        BasicMaths maths = new BasicMaths();
-
         int actual = maths.addition(Num1, Num2);
         int expected = Num1+Num2;
         
@@ -38,8 +39,6 @@ public class BasicMathsTest {
 
     @Test
     public void testSubtract() {
-        BasicMaths maths = new BasicMaths();
-
         int actual = maths.subtraction(Num1, Num2);
         int expected = Num1-Num2;
         
@@ -48,8 +47,6 @@ public class BasicMathsTest {
 
     @Test
     public void testMultiply() {
-        BasicMaths maths = new BasicMaths();
-
         int actual = maths.multiplication(Num1, Num2);
         int expected = Num1*Num2;
         
@@ -58,8 +55,6 @@ public class BasicMathsTest {
 
     @Test
     public void testDivide() {
-        BasicMaths maths = new BasicMaths();
-
         int actual = maths.division(Num1, Num2);
         int expected = Num1/Num2;
         
@@ -68,7 +63,6 @@ public class BasicMathsTest {
 
     @Test
     public void testDivideByZero() {
-        BasicMaths maths = new BasicMaths();
         assertThrows(ArithmeticException.class, ()->maths.division(Num1, 0) , "Divide By Zer0");
     }
 
@@ -106,6 +100,6 @@ public class BasicMathsTest {
 
     @AfterAll
 	static void tear(){
-		System.out.println("@AfterAll executed");
+		System.out.println("static @AfterAll executed");
 	}
 }
