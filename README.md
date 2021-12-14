@@ -31,3 +31,9 @@ JUnit 5 - Testing Framework
     $ mvn clean test
     $ mvn clean test -Dtest=io.fall.BasicMathsTest
     $ mvn clean test -Dtest=io.fall.BasicMathsTest#testAssertMethods
+
+---
+
+## Junit test lifecycle & hooks
+
+![Template 1](pics/JUnit-Test-Life-Cycle.jpg)
