@@ -9,16 +9,18 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 
 /**
- *  Single test instance for all test cases 
+ * Single test instance for all test cases
  * 
- *      Still execution order of all methods can be random
+ * Still execution order of all methods can be random
  */
-@TestInstance(Lifecycle.PER_CLASS)  
+@TestInstance(Lifecycle.PER_CLASS)
+@DisplayName("Testing 2: ")
 public class BasicMathsTest2 {
 
     BasicMaths maths;
@@ -83,12 +85,41 @@ public class BasicMathsTest2 {
     @DisplayName("Testing divide method for different scenario")
     public void testAllDivide() {
         assertAll(
-            ()->assertEquals(1/2.0, maths.division(1, 2)),
-            ()->assertEquals(-1/2.0, maths.division(-1, 2)),
-            ()->assertEquals(1/-2.0, maths.division(1, -2)),
-            ()->assertEquals(-1/-2.0, maths.division(-1, -2)),
-            ()->assertThrows(ArithmeticException.class, () -> maths.division(1, 0))
-        );
+                () -> assertEquals(1 / 2.0, maths.division(1, 2)),
+                () -> assertEquals(-1 / 2.0, maths.division(-1, 2)),
+                () -> assertEquals(1 / -2.0, maths.division(1, -2)),
+                () -> assertEquals(-1 / -2.0, maths.division(-1, -2)),
+                () -> assertThrows(ArithmeticException.class, () -> maths.division(1, 0)));
+    }
+
+    @Nested
+    @DisplayName("Testing Divide Method")
+    public class DivideTest {
+
+        @Test
+        @DisplayName(" : with +ve num")
+        public void testDivideByPositive() {
+            double actual = maths.division(Num1, Num2);
+            double expected = Num1 / (double)Num2;
+
+            assertEquals(expected, actual);
+        }
+
+        @Test
+        @DisplayName(" : with -ve num")
+        public void testDivideByNegative() {
+            double actual = maths.division(Num1, -1* Num2);
+            double expected = Num1 / ((double) -1* Num2);
+
+            assertEquals(expected, actual);
+        }
+
+        @Test
+        @DisplayName(" : with 0")
+        public void testDivideByZero() {
+            assertThrows(ArithmeticException.class, () -> maths.division(1, 0));
+        }
+
     }
 
     @AfterEach
