@@ -13,7 +13,10 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.RepetitionInfo;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInfo;
+import org.junit.jupiter.api.TestReporter;
 import org.junit.jupiter.api.condition.DisabledOnOs;
 import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
 import org.junit.jupiter.api.condition.EnabledIfSystemProperty;
@@ -68,11 +71,15 @@ public class BasicMathsTest {
 	}
     
     BasicMaths maths; 
-
+    TestInfo testInfo;
+    TestReporter testReporter;
+    
     @BeforeEach
-	void setupThis(){
+	void setupThis(TestInfo testInfo, TestReporter testReporter){
+        this.testInfo = testInfo;
+        this.testReporter=testReporter;
+        this.maths = new BasicMaths();
 		System.out.println("@BeforeEach executed");
-        maths = new BasicMaths();
 	}
 
     private static final int Num1 = 1;
@@ -120,7 +127,13 @@ public class BasicMathsTest {
     }
 
     @Test
+    @Tag("warning")
+    @DisplayName("Divide By Zer0")
     public void testDivideByZero() {
+        // System.out.println(testInfo.getDisplayName()+" under tag: "+testInfo.getTags());
+        // System.out.println("more details: class-"+testInfo.getTestClass()+" method-"+testInfo.getTestMethod());
+
+        testReporter.publishEntry(testInfo.getDisplayName()+" under tag: "+testInfo.getTags());
         assertThrows(ArithmeticException.class, ()->maths.division(Num1, 0) , "Divide By Zer0");
     }
 
