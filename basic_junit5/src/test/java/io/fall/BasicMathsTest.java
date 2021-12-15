@@ -12,6 +12,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.RepeatedTest;
+import org.junit.jupiter.api.RepetitionInfo;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.DisabledOnOs;
 import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
@@ -52,6 +53,14 @@ public class BasicMathsTest {
         System.out.println("Server is up, continue server side testing");
     }
 
+    @RepeatedTest(value = 5, name = "{displayName} - {currentRepetition}/{totalRepetitions}")
+    @DisplayName("Exploring RepeatedTest")
+    public void fun(RepetitionInfo repetitionInfo){
+        if((repetitionInfo.getCurrentRepetition() & 1)==1){
+            System.out.println("Odd turn : "+repetitionInfo.getCurrentRepetition()+"/"+repetitionInfo.getTotalRepetitions());
+        }
+        assertTrue(true);
+    }
 
     @BeforeAll
 	static void setup(){
