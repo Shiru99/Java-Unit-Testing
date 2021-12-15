@@ -96,9 +96,18 @@ public class BasicMathsTest {
     @Test
     public void testDivide() {
         double actual = maths.division(Num1, Num2);
-        double expected = Num1/Num2;
+        double expected = Num1/(double)Num2;
         
-        assertEquals(expected, actual);
+        // assertEquals(expected, actual, "test Divide failed, Num1: "+Num1+" Num2: "+Num2);
+        /**
+         * Regardless of true or false for assertEquals; message is composed 
+         *                                      (sometimes it can be resource intensive)
+         *  
+         *      message supplier can be useful in such scenarios as it composes message only in 
+         *      case of test failure
+         */
+        assertEquals(expected, actual, ()->"test Divide failed, Num1: "+Num1+" Num2: "+Num2);
+
     }
 
     @Test
