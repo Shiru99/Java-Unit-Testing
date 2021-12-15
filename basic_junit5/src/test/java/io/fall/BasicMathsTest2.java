@@ -10,6 +10,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
@@ -40,6 +41,7 @@ public class BasicMathsTest2 {
     private static final int Num2 = 2;
 
     @Test
+    @Tag("quick")
     @DisplayName("Testing Add Method")
     public void testAdd() {
         int actual = maths.addition(Num1, Num2);
@@ -49,6 +51,7 @@ public class BasicMathsTest2 {
     }
 
     @Test
+    @Tag("in-depth")
     @DisplayName("Testing Subtract Method")
     public void testSubtract() {
         int actual = maths.subtraction(Num1, Num2);
@@ -58,6 +61,7 @@ public class BasicMathsTest2 {
     }
 
     @Test
+    @Tag("in-depth")
     @DisplayName("Testing Multiply Method")
     public void testMultiply() {
         int actual = maths.multiplication(Num1, Num2);
@@ -67,21 +71,24 @@ public class BasicMathsTest2 {
     }
 
     @Test
+    @Tag("quick")
     @DisplayName("Testing Divide Method")
     public void testDivide() {
         double actual = maths.division(Num1, Num2);
-        double expected = Num1 / Num2;
+        double expected = Num1 / (double)Num2;
 
         assertEquals(expected, actual);
     }
 
     @Test
+    @Tag("in-depth")
     @DisplayName("Testing Divide Method : for 'Divide By Zer0'")
     public void testDivideByZero() {
         assertThrows(ArithmeticException.class, () -> maths.division(Num1, 0), "Divide By Zer0");
     }
 
     @Test
+    @Tag("in-depth")
     @DisplayName("Testing divide method for different scenario")
     public void testAllDivide() {
         assertAll(
@@ -93,6 +100,7 @@ public class BasicMathsTest2 {
     }
 
     @Nested
+    @Tag("in-depth")
     @DisplayName("Testing Divide Method")
     public class DivideTest {
 
