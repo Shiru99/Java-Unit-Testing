@@ -14,8 +14,8 @@ public class BasicMaths {
         return a*b;
     }
 
-    public int division(int a,int b) {
+    public double division(int a,int b) {
         if(b==0) throw new ArithmeticException("Zero cannot divide any number");
-        return a/b;
+        return (double)a/ (double)b;
     }
 }

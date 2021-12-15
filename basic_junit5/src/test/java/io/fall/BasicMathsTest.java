@@ -95,8 +95,8 @@ public class BasicMathsTest {
 
     @Test
     public void testDivide() {
-        int actual = maths.division(Num1, Num2);
-        int expected = Num1/Num2;
+        double actual = maths.division(Num1, Num2);
+        double expected = Num1/Num2;
         
         assertEquals(expected, actual);
     }

@@ -1,5 +1,6 @@
 package io.fall;
 
+import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -66,8 +67,8 @@ public class BasicMathsTest2 {
     @Test
     @DisplayName("Testing Divide Method")
     public void testDivide() {
-        int actual = maths.division(Num1, Num2);
-        int expected = Num1 / Num2;
+        double actual = maths.division(Num1, Num2);
+        double expected = Num1 / Num2;
 
         assertEquals(expected, actual);
     }
@@ -76,6 +77,18 @@ public class BasicMathsTest2 {
     @DisplayName("Testing Divide Method : for 'Divide By Zer0'")
     public void testDivideByZero() {
         assertThrows(ArithmeticException.class, () -> maths.division(Num1, 0), "Divide By Zer0");
+    }
+
+    @Test
+    @DisplayName("Testing divide method for different scenario")
+    public void testAllDivide() {
+        assertAll(
+            ()->assertEquals(1/2.0, maths.division(1, 2)),
+            ()->assertEquals(-1/2.0, maths.division(-1, 2)),
+            ()->assertEquals(1/-2.0, maths.division(1, -2)),
+            ()->assertEquals(-1/-2.0, maths.division(-1, -2)),
+            ()->assertThrows(ArithmeticException.class, () -> maths.division(1, 0))
+        );
     }
 
     @AfterEach
