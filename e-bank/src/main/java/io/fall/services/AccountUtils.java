@@ -25,7 +25,7 @@ public class AccountUtils implements Operations {
         return accountUtils;
     }
 
-    Map<Integer,Account> allAccounts = new TreeMap<>();
+    public Map<Integer,Account> allAccounts = new TreeMap<>();
 
     static int accountsCreatedSoFar = 0;
 

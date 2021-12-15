@@ -1,5 +1,5 @@
 /home/shiru/0/Java/Java Frameworks/JUnit-5/e-bank/src/main/java/io/fall/exceptions/AccountNotFoundException.java
-/home/shiru/0/Java/Java Frameworks/JUnit-5/e-bank/src/main/java/io/fall/Main.java
+/home/shiru/0/Java/Java Frameworks/JUnit-5/e-bank/src/main/java/io/fall/App.java
 /home/shiru/0/Java/Java Frameworks/JUnit-5/e-bank/src/main/java/io/fall/models/Account.java
 /home/shiru/0/Java/Java Frameworks/JUnit-5/e-bank/src/main/java/io/fall/services/AccountUtils.java
 /home/shiru/0/Java/Java Frameworks/JUnit-5/e-bank/src/main/java/io/fall/exceptions/InsufficientBalanceException.java
