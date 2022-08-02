@@ -15,6 +15,6 @@ public class PersistentAccountRepository implements AccountRepository {
 
     @Override
     public boolean isExpired(Account account) {
-        return LocalDateTime.now().compareTo(account.getExpectedRetirement()) >= 0;
+        return LocalDate.now().compareTo(account.getExpectedRetirement()) >= 0;
     }
 }
